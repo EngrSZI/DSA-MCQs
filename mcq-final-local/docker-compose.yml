@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:16
+    container_name: mcq-db
+    environment:
+      POSTGRES_USER: mcq_user
+      POSTGRES_PASSWORD: mcq_password
+      POSTGRES_DB: mcq_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+  postgres_data:
